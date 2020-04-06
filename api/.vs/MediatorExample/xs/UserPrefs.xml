@@ -1,0 +1,46 @@
+﻿<Properties StartupConfiguration="{A0BBDD7B-D6D0-4ED1-A767-13294FB77279}|Default">
+  <MonoDevelop.Ide.ItemProperties.Application PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Application/Controllers/UserController.cs">
+    <Files>
+      <File FileName="Application/Controllers/ValuesController.cs" Line="28" Column="43" />
+      <File FileName="Domain/Entities/Model/User.cs" Line="14" Column="23" />
+      <File FileName="Domain/Data/SqlServerRepositoryContract/Generic/IEntityRepository.cs" Line="165" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MediatorExample" expanded="True">
+            <Node name="Application" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="UserController.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Domain" expanded="True">
+              <Node name="Data" expanded="True">
+                <Node name="SqlServerRepositoryContract" expanded="True">
+                  <Node name="Generic" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+            <Node name="Infrastructure" expanded="True">
+              <Node name="CrossCutting" expanded="True" />
+              <Node name="SQLServerData" expanded="True">
+                <Node name="Context" expanded="True" />
+                <Node name="Mappings" expanded="True" />
+                <Node name="Repositories" expanded="True">
+                  <Node name="Generic" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

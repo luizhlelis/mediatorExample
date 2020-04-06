@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Handlers\" />
+    <Folder Include="Command\" />
+    <Folder Include="Services\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\SqlServerRepositoryContract\" />
+    <Folder Include="Data\SqlServerRepositoryContract\Generic\" />
+    <Folder Include="Data\SqlServerRepositoryContract\Specific\" />
+    <Folder Include="Data\SqlServerRepositoryContract\Generic\Entities\" />
+    <Folder Include="Utils\" />
+    <Folder Include="Entities\Model\" />
+    <Folder Include="Services\Contract\" />
+    <Folder Include="Services\Concrete\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>

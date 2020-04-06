@@ -1,0 +1,15 @@
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Infrastructure.deps.json
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Infrastructure.runtimeconfig.json
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Infrastructure.runtimeconfig.dev.json
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Infrastructure.dll
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Infrastructure.pdb
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Domain.dll
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/bin/Debug/netcoreapp2.2/Domain.pdb
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.csprojAssemblyReference.cache
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.AssemblyInfoInputs.cache
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.AssemblyInfo.cs
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.csproj.CopyComplete
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.dll
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.pdb
+/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/Debug/netcoreapp2.2/Infrastructure.genruntimeconfig.cache

@@ -1,0 +1,8 @@
+/Users/luiz.lelis/Projects/MediatorExample/Domain/bin/Debug/netcoreapp2.2/Domain.deps.json
+/Users/luiz.lelis/Projects/MediatorExample/Domain/bin/Debug/netcoreapp2.2/Domain.dll
+/Users/luiz.lelis/Projects/MediatorExample/Domain/bin/Debug/netcoreapp2.2/Domain.pdb
+/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/Debug/netcoreapp2.2/Domain.csproj.CoreCompileInputs.cache
+/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/Debug/netcoreapp2.2/Domain.AssemblyInfoInputs.cache
+/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/Debug/netcoreapp2.2/Domain.AssemblyInfo.cs
+/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/Debug/netcoreapp2.2/Domain.dll
+/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/Debug/netcoreapp2.2/Domain.pdb
