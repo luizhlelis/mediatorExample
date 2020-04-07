@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": ""
+    "signature": "b06061ad2837d9404eee79b04f5acd01183c0838"
   },
   "compilationOptions": {},
   "targets": {
@@ -340,6 +340,16 @@
         "dependencies": {
           "System.Security.AccessControl": "4.5.0",
           "System.Security.Principal.Windows": "4.5.0"
+        },
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
         }
       },
       "Newtonsoft.Json/12.0.3": {
@@ -384,7 +394,7 @@
           "runtimes/win-arm64/native/sni.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -393,7 +403,7 @@
           "runtimes/win-x64/native/sni.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -402,7 +412,7 @@
           "runtimes/win-x86/native/sni.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -547,6 +557,16 @@
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
         }
       },
       "System.IdentityModel.Tokens.Jwt/5.5.0": {
@@ -658,6 +678,16 @@
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
           "runtime.native.System": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
         }
       },
       "System.Net.Primitives/4.3.0": {
@@ -789,7 +819,7 @@
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -836,9 +866,22 @@
       "System.Security.AccessControl/4.5.0": {
         "dependencies": {
           "System.Security.Principal.Windows": "4.5.0"
+        },
+        "runtimeTargets": {
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
         }
       },
-      "System.Security.Cryptography.Cng/4.5.0": {},
+      "System.Security.Cryptography.Cng/4.5.0": {
+        "runtimeTargets": {
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        }
+      },
       "System.Security.Cryptography.Primitives/4.3.0": {
         "dependencies": {
           "System.Diagnostics.Debug": "4.3.0",
@@ -877,7 +920,18 @@
           }
         }
       },
-      "System.Security.Principal.Windows/4.5.0": {},
+      "System.Security.Principal.Windows/4.5.0": {
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        }
+      },
       "System.Security.SecureString/4.3.0": {
         "dependencies": {
           "System.Resources.ResourceManager": "4.3.0",
@@ -887,6 +941,16 @@
           "System.Security.Cryptography.Primitives": "4.3.0",
           "System.Text.Encoding": "4.3.0",
           "System.Threading": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtime/unix/lib/_._": {
+            "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
         }
       },
       "System.Text.Encoding/4.3.0": {
@@ -1297,7 +1361,7 @@
     "System.Collections.NonGeneric/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-prtjIEMhGUnQq6RnPEYLpFt8AtLbp9yq2zxOSrY7KJJZrw25Fi97IzBqY7iqssbM61Ek5b8f3MG/sG1N2sN5KA==",
+      "sha512": "sha512-LE/oChpRvkSi3U25u0KnJcI44JeDZ1QJCyN4qFDx2uusEypdqR24w7lKYw21eYe5esuCBuc862wRmpF63Yy1KQ==",
       "path": "system.collections.nongeneric/4.3.0",
       "hashPath": "system.collections.nongeneric.4.3.0.nupkg.sha512"
     },
@@ -1605,7 +1669,7 @@
     "System.Runtime.Serialization.Primitives/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Wz+0KOukJGAlXjtKr+5Xpuxf8+c8739RI1C+A2BoQZT+wMCCoMDDdO8/4IRHfaVINqL78GO8dW8G2lW/e45Mcw==",
+      "sha512": "sha512-2Z5t70a2SwMsfQDp9KOclaZNyQhfIga2gppq9lIUDM1A4ohTshn4JqT7ir8bvIhXgorWKYDAr6rPzEbi/nTGKg==",
       "path": "system.runtime.serialization.primitives/4.3.0",
       "hashPath": "system.runtime.serialization.primitives.4.3.0.nupkg.sha512"
     },
@@ -1731,7 +1795,7 @@
     "System.Xml.XmlSerializer/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "sha512-VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },

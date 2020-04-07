@@ -23,35 +23,35 @@ namespace MediatorExample.Application.Controllers
             _userDomainService = userDomainService;
         }
 
-        // GET api/values
+        // GET api/user
         [HttpGet]
         public ActionResult<IEnumerable<User>> Get()
         {
             return Ok(_userGenericRepository.FindAll());
         }
 
-        // GET api/values/5
+        // GET api/user/5
         [HttpGet("{id}")]
         public ActionResult<User> Get(int id)
         {
             return Ok(_userGenericRepository.Find(id));
         }
 
-        // POST api/values
+        // POST api/user
         [HttpPost]
         public void Post([FromBody] User user)
         {
             _userGenericRepository.Add(user);
         }
 
-        // PUT api/values/5
+        // PUT api/user/5
         [HttpPut("{id}")]
         public void Put([FromBody] User user)
         {
             _userGenericRepository.Add(user);
         }
 
-        // DELETE api/values/5
+        // DELETE api/user/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

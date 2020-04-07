@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/Users/luiz.lelis/Projects/MediatorExample/Application/Application.csproj": {}
+    "/app/Application/Application.csproj": {}
   },
   "projects": {
-    "/Users/luiz.lelis/Projects/MediatorExample/Application/Application.csproj": {
+    "/app/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/luiz.lelis/Projects/MediatorExample/Application/Application.csproj",
+        "projectUniqueName": "/app/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Application/Application.csproj",
-        "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
-        "outputPath": "/Users/luiz.lelis/Projects/MediatorExample/Application/obj/",
+        "projectPath": "/app/Application/Application.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/Application/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -28,11 +28,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj": {
-                "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj"
+              "/app/Domain/Domain.csproj": {
+                "projectPath": "/app/Domain/Domain.csproj"
               },
-              "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/Infrastructure.csproj": {
-                "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/Infrastructure.csproj"
+              "/app/Infrastructure/Infrastructure.csproj": {
+                "projectPath": "/app/Infrastructure/Infrastructure.csproj"
               }
             }
           }
@@ -46,6 +46,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
@@ -65,33 +69,27 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj": {
+    "/app/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj",
+        "projectUniqueName": "/app/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj",
-        "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
-        "outputPath": "/Users/luiz.lelis/Projects/MediatorExample/Domain/obj/",
+        "projectPath": "/app/Domain/Domain.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -125,33 +123,27 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     },
-    "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/Infrastructure.csproj": {
+    "/app/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/app/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
-        "outputPath": "/Users/luiz.lelis/Projects/MediatorExample/Infrastructure/obj/",
+        "projectPath": "/app/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/app/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -162,8 +154,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj": {
-                "projectPath": "/Users/luiz.lelis/Projects/MediatorExample/Domain/Domain.csproj"
+              "/app/Domain/Domain.csproj": {
+                "projectPath": "/app/Domain/Domain.csproj"
               }
             }
           }
@@ -209,16 +201,10 @@
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

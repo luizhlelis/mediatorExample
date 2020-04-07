@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace MediatorExample.Application
 {
@@ -14,11 +16,12 @@ namespace MediatorExample.Application
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+            var host = WebHost.CreateDefaultBuilder(args)
+                .ConfigureServices(services => services.AddAutofac())
+                .UseStartup<Startup>()
+                .Build();
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            host.Run();
+        }
     }
 }
