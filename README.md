@@ -8,7 +8,9 @@ Sample Web Application using mediator pattern and CQRS concepts. Developed using
 ### Commands
 To restore nuget packages:
 - nuget restore MediatorExample.sln
+
 To generate migrations file:
 - dotnet ef migrations add <AnyMigrationName> --project Infrastructure --context SqlServerContext --output-dir "Migrations/" --verbose
+
 To run apllication:
 - docker-compose up
