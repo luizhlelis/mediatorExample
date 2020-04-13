@@ -7,3 +7,5 @@ api/Infrastructure/obj/*
 api/Application/bin/*
 api/Domain/bin/*
 api/Infrastructure/bin/*
+
+api/.vs
