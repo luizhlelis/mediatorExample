@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/app/Infrastructure/Infrastructure.csproj": {}
+    "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "/app/Domain/Domain.csproj": {
+    "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/Domain/Domain.csproj",
+        "projectUniqueName": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/app/Domain/Domain.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/app/Domain/obj/",
+        "projectPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj",
+        "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
+        "outputPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -51,27 +51,33 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/app/Infrastructure/Infrastructure.csproj": {
+    "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/app/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/app/Infrastructure/Infrastructure.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/app/Infrastructure/obj/",
+        "projectPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
+        "outputPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
@@ -82,8 +88,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "/app/Domain/Domain.csproj": {
-                "projectPath": "/app/Domain/Domain.csproj"
+              "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj": {
+                "projectPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj"
               }
             }
           }
@@ -129,10 +135,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -729,23 +729,23 @@
     ]
   },
   "packageFolders": {
-    "/root/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/luiz.lelis/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/app/Domain/Domain.csproj",
+      "projectUniqueName": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/app/Domain/Domain.csproj",
-      "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/app/Domain/obj/",
+      "projectPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/Domain.csproj",
+      "packagesPath": "/Users/luiz.lelis/.nuget/packages/",
+      "outputPath": "/Users/luiz.lelis/Documents/Projects/mediatorExample/api/Domain/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/root/.nuget/NuGet/NuGet.Config"
+        "/Users/luiz.lelis/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -779,10 +779,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.200/RuntimeIdentifierGraph.json"
       }
     }
   }

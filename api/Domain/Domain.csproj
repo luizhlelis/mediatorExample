@@ -7,7 +7,7 @@
   <ItemGroup>
     <Folder Include="Entities\" />
     <Folder Include="Handlers\" />
-    <Folder Include="Command\" />
+    <Folder Include="Commands\" />
     <Folder Include="Services\" />
     <Folder Include="Data\" />
     <Folder Include="Data\SqlServerRepositoryContract\" />

@@ -1,0 +1,9 @@
+**/.DS_Store
+
+api/Application/obj/*
+api/Domain/obj/*
+api/Infrastructure/obj/*
+
+api/Application/bin/*
+api/Domain/bin/*
+api/Infrastructure/bin/*

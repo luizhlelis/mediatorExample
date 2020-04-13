@@ -4,14 +4,16 @@ using MediatorExample.Infrastructure.SQLServerData.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    partial class SqlServerContextModelSnapshot : ModelSnapshot
+    [Migration("20200408231315_bla")]
+    partial class bla
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5e2f7696-06b0-4d6e-a67a-f7da1c088e0f"),
+                            Id = new Guid("af615154-40e1-4c19-9bb7-993e9772c02b"),
                             Cpf = "111.111.111-11",
                             Email = "luizhlelis@gmail.com",
                             Name = "Luiz Lelis",
