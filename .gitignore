@@ -1,5 +1,7 @@
 **/.DS_Store
 
+api/.DS_Store
+
 api/Application/obj/*
 api/Domain/obj/*
 api/Infrastructure/obj/*
