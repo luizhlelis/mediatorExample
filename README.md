@@ -1,14 +1,17 @@
 # mediatorExample
 
 ### Summary
-Sample Web Application using mediator pattern and CQRS concepts. Developed using .Net Core, Autofac, SqlServer with Entity Framework,  MadiatR, and Docker (one container for webApp and one for SQLServer).
+Sample Web Application using mediator pattern and CQRS concepts. Developed using .Net Core, Autofac, SqlServer with Entity Framework,  MadiatR, and Docker (containerized SQLServer).
 
 ### Commands
 To restore nuget packages:
 - nuget restore MediatorExample.sln
 
-To generate migrations file:
+To generate migration's file:
 - dotnet ef migrations add <AnyMigrationName> --project Infrastructure --context SqlServerContext --output-dir "Migrations/" --verbose
 
-To run apllication:
+To generate the containerized Database, update it with migrations:
 - docker-compose up
+
+To run application:
+- dotnet run Application/Application.csproj
