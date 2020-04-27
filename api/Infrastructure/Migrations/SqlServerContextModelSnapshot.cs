@@ -43,7 +43,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("5e2f7696-06b0-4d6e-a67a-f7da1c088e0f"),
+                            Id = new Guid("2e6d1abf-8961-4c00-8343-6cc95aa876b1"),
                             Cpf = "111.111.111-11",
                             Email = "luizhlelis@gmail.com",
                             Name = "Luiz Lelis",

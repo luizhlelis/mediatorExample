@@ -2,32 +2,40 @@
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic.Entities;
 using MediatorExample.Domain.Utils;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using MediatorExample.Infrastructure.SQLServerData.Context;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+
+/*
+    Special thanks to Rodrigo Bernardino
+    this repository was based on his EF6 project and I adapted it to EFCore
+    github.com/RodrigoBernardino/DynamicLinqRepository
+*/
 
 namespace NexaDb.Infra.Data.Repositories.Generic
 {
     public class EntityRepository<TEntity> : IEntityRepository<TEntity>
         where TEntity : class, IIdentifiableEntity, new()
     {
-        public EntityRepository()
+        public EntityRepository(IConfiguration configuration)
         {
             ContextCreator = () =>
             {
-                var context = new SqlServerContext();
-                //ConfigContext(context);
+                DbContextOptionsBuilder<SqlServerContext> builder =
+                    new DbContextOptionsBuilder<SqlServerContext>();
 
-                //For tests:
-                //context.Database.Log = s => Debug.WriteLine(s);
+                builder.UseSqlServer(
+                    configuration
+                            .GetSection("ConnectionSettings:SqlServer:ConnectionString")
+                            .Value
+                );
+
+                SqlServerContext context = new SqlServerContext(builder.Options);
 
                 return context;
             };

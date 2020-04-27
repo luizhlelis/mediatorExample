@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(SqlServerContext))]
-    [Migration("20200408222354_seed")]
-    partial class seed
+    [Migration("20200420200742_Seed")]
+    partial class Seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,7 +45,7 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9b89766c-f007-420d-b843-2d15f92cb250"),
+                            Id = new Guid("2e6d1abf-8961-4c00-8343-6cc95aa876b1"),
                             Cpf = "111.111.111-11",
                             Email = "luizhlelis@gmail.com",
                             Name = "Luiz Lelis",

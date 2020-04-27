@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Migrations
 {
-    public partial class seed : Migration
+    public partial class Seed : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -25,7 +25,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Cpf", "Email", "Name", "Phone" },
-                values: new object[] { new Guid("9b89766c-f007-420d-b843-2d15f92cb250"), "111.111.111-11", "luizhlelis@gmail.com", "Luiz Lelis", "(31)99999-9999" });
+                values: new object[] { new Guid("2e6d1abf-8961-4c00-8343-6cc95aa876b1"), "111.111.111-11", "luizhlelis@gmail.com", "Luiz Lelis", "(31)99999-9999" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
