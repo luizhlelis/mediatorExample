@@ -1,7 +1,7 @@
 # mediatorExample
 
 ### Summary
-Sample Web Application using mediator pattern and CQRS concepts. Developed using .Net Core, Autofac, SqlServer with Entity Framework,  MadiatR, and Docker (containerized SQLServer).
+Sample Web Application using mediator pattern and CQRS concepts. Developed using .Net Core, Autofac, SqlServer with Entity Framework,  MadiatR, and Docker (containerized SQLServer and MongoDB).
 
 ### Commands
 To restore nuget packages:
