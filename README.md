@@ -4,13 +4,13 @@
 Sample Web Application using mediator pattern and CQRS concepts. Developed using .Net Core, Autofac, SqlServer with Entity Framework,  MadiatR, and Docker (containerized SQLServer and MongoDB).
 
 ### Commands
-To restore nuget packages:
+To restore nuget packages (inside api folder):
 - nuget restore MediatorExample.sln
 
-To generate migration's file:
-- dotnet ef migrations add "<AnyMigrationName>" --project Infrastructure --context SqlServerContext --output-dir "Migrations/" --verbose
+To generate migration's file (inside api folder):
+- dotnet ef migrations add "AnyMigrationName" --project Infrastructure --context SqlServerContext --output-dir "Migrations/" --verbose
 
-To generate the containerized Database, update it with migrations:
+This command will generate the containerized Databases (mongo and SQLServer) and will up SqlServer Seed Container wich will update SqlSever Database with migrations. MongoDb will initialize with "init-mongo.js" file configuration:
 - docker-compose up
 - docker-compose up -d (if you want to run in background mode)
 
