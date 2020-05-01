@@ -7,7 +7,7 @@ namespace MediatorExample.Infrastructure.SQLServerData.Context
 {
     public class SqlServerContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public SqlServerContext(DbContextOptions<SqlServerContext> options) : base(options)
         {
@@ -15,7 +15,7 @@ namespace MediatorExample.Infrastructure.SQLServerData.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new CustomerMapping());
         }
     }
 }

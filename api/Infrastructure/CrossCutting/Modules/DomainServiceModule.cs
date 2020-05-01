@@ -9,8 +9,8 @@ namespace MediatorExample.Infrastructure.CrossCutting.Modules
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UserDomainService>()
-                .As<IUserDomainService>();
+            builder.RegisterType<CustomerDomainService>()
+                .As<ICustomerDomainService>();
         }
     }
 }

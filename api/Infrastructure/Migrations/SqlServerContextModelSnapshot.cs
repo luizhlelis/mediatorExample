@@ -19,13 +19,10 @@ namespace Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MediatorExample.Domain.Model.Entities.User", b =>
+            modelBuilder.Entity("MediatorExample.Domain.Model.Entities.Customer", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Cpf")
-                        .IsRequired();
 
                     b.Property<string>("Email")
                         .IsRequired();
@@ -38,13 +35,12 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Customers");
 
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2e6d1abf-8961-4c00-8343-6cc95aa876b1"),
-                            Cpf = "111.111.111-11",
+                            Id = new Guid("dd7b68b4-9bc0-4b9b-81d9-ddede17ce98d"),
                             Email = "luizhlelis@gmail.com",
                             Name = "Luiz Lelis",
                             Phone = "(31)99999-9999"

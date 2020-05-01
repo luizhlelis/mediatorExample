@@ -1,7 +1,7 @@
 ﻿using System;
 namespace MediatorExample.Domain.Services.Contract
 {
-    public interface IUserDomainService
+    public interface ICustomerDomainService
     {
 
     }

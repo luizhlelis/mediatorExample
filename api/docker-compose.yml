@@ -18,10 +18,13 @@ services:
     ports:
       - "1433:1433"
   mongo:
+    container_name: mongodb
     image: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: 1Secure*Password1
       MONGO_INITDB_DATABASE: MediatorExampleNoSql
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     ports:
       - "27017:27017"

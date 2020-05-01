@@ -5,17 +5,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace MediatorExample.Infrastructure.SQLServerData.Mappings
 {
-    public class UserMapping : IEntityTypeConfiguration<User>
+    public class CustomerMapping : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder.ToTable("Users");
+            builder.ToTable("Customers");
 
             builder.HasKey(table => table.Id);
 
             builder.Property(table => table.Id)
-                .IsRequired(true);
-            builder.Property(table => table.Cpf)
                 .IsRequired(true);
             builder.Property(table => table.Name)
                 .IsRequired(true);
@@ -26,10 +24,9 @@ namespace MediatorExample.Infrastructure.SQLServerData.Mappings
 
             builder.HasData
             (
-                new User
+                new Customer
                 (
-                    Guid.NewGuid(),
-                    "111.111.111-11",
+                    Guid.Parse("dd7b68b4-9bc0-4b9b-81d9-ddede17ce98d"),
                     "Luiz Lelis",
                     "luizhlelis@gmail.com",
                     "(31)99999-9999"
