@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CrossCutting\" />
-    <Folder Include="CrossCutting\Modules\" />
+    <Folder Include="IoC\" />
+    <Folder Include="IoC\Modules\" />
     <Folder Include="SQLServerData\" />
     <Folder Include="SQLServerData\Context\" />
     <Folder Include="SQLServerData\Repositories\" />

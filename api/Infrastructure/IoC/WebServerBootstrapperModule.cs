@@ -1,15 +1,14 @@
 ﻿using System;
 using Autofac;
-using MediatorExample.Infrastructure.CrossCutting.Modules;
+using MediatorExample.Infrastructure.IoC.Modules;
 
-namespace MediatorExample.Infrastructure.CrossCutting
+namespace MediatorExample.Infrastructure.IoC
 {
     public class WebServerBootstrapperModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule(new SqlServerRepositoryModule());
-            builder.RegisterModule(new DomainServiceModule());
         }
     }
 }

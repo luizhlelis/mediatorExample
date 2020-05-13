@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic;
 using MediatorExample.Domain.Model.Entities;
-using MediatorExample.Domain.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediatorExample.Application.Controllers
@@ -13,14 +12,11 @@ namespace MediatorExample.Application.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private readonly ICustomerDomainService _customerDomainService;
         private readonly IEntityRepository<Customer> _customerGenericRepository;
 
-        public CustomerController(IEntityRepository<Customer> customerGenericRepository,
-            ICustomerDomainService customerDomainService)
+        public CustomerController(IEntityRepository<Customer> customerGenericRepository)
         {
             _customerGenericRepository = customerGenericRepository;
-            _customerDomainService = customerDomainService;
         }
 
         // GET api/customer

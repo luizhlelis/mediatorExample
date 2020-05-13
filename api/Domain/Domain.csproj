@@ -6,9 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="Handlers\" />
     <Folder Include="Commands\" />
-    <Folder Include="Services\" />
     <Folder Include="Data\" />
     <Folder Include="Data\SqlServerRepositoryContract\" />
     <Folder Include="Data\SqlServerRepositoryContract\Generic\" />
@@ -16,10 +14,16 @@
     <Folder Include="Data\SqlServerRepositoryContract\Generic\Entities\" />
     <Folder Include="Utils\" />
     <Folder Include="Entities\Model\" />
-    <Folder Include="Services\Contract\" />
-    <Folder Include="Services\Concrete\" />
+    <Folder Include="CommandHandlers\" />
+    <Folder Include="Queries\" />
+    <Folder Include="QueryHandlers\" />
+    <Folder Include="NotificationHandlers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="MediatR" Version="8.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 </Project>

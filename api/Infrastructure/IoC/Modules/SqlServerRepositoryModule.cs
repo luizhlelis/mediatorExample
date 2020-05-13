@@ -1,10 +1,9 @@
 ﻿using System;
 using Autofac;
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic;
-using MediatorExample.Domain.Services;
 using NexaDb.Infra.Data.Repositories.Generic;
 
-namespace MediatorExample.Infrastructure.CrossCutting.Modules
+namespace MediatorExample.Infrastructure.IoC.Modules
 {
     public class SqlServerRepositoryModule : Module
     {
