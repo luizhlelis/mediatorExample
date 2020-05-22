@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using MediatorExample.Domain.Model.Entities;
-using MediatorExample.Infrastructure.SQLServerData.Mappings;
+using MediatorExample.Infrastructure.SqlServerData.Mappings;
 
-namespace MediatorExample.Infrastructure.SQLServerData.Context
+namespace MediatorExample.Infrastructure.SqlServerData.Context
 {
     public class SqlServerContext : DbContext
     {

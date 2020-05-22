@@ -3,7 +3,7 @@ using MediatorExample.Domain.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MediatorExample.Infrastructure.SQLServerData.Mappings
+namespace MediatorExample.Infrastructure.SqlServerData.Mappings
 {
     public class CustomerMapping : IEntityTypeConfiguration<Customer>
     {

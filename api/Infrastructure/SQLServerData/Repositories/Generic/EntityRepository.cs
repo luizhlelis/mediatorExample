@@ -7,17 +7,16 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
-using MediatorExample.Infrastructure.SQLServerData.Context;
+using MediatorExample.Infrastructure.SqlServerData.Context;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Configuration;
 
 /*
-    Special thanks to Rodrigo Bernardino
-    this repository was based on his EF6 project and I adapted it to EFCore
-    github.com/RodrigoBernardino/DynamicLinqRepository
+    This repository was based on DynamicLinqRepository project and adapted to
+    EFCore: github.com/RodrigoBernardino/DynamicLinqRepository
 */
 
-namespace NexaDb.Infra.Data.Repositories.Generic
+namespace NexaDb.Infra.SqlServerData.Repositories.Generic
 {
     public class EntityRepository<TEntity> : IEntityRepository<TEntity>
         where TEntity : class, IIdentifiableEntity, new()
@@ -42,12 +41,6 @@ namespace NexaDb.Infra.Data.Repositories.Generic
         }
 
         public Func<SqlServerContext> ContextCreator { get; private set; }
-
-        private void ConfigContext(SqlServerContext context)
-        {
-            //context.Configuration.ProxyCreationEnabled = false;
-            //context.Configuration.LazyLoadingEnabled = false;
-        }
 
         #region Write
 
@@ -128,35 +121,6 @@ namespace NexaDb.Infra.Data.Repositories.Generic
                 entityContext.SaveChanges();
             }
         }
-
-        /// <summary>
-        /// BulkAddAll: Adds a range of entities to database via a bulk operation.
-        /// </summary>
-        /// <param name="entityList">The list of entities that will be inserted into the database.</param>
-        /// <param name="allowNotNullSelfReferences">When AllowNotNullSelfReferences is set to true, entities with self referencing 
-        /// foreign keys declared as NOT NULL will be properly inserted. But, this will only work if the database user has the 
-        /// required privileges to execute ALTER TABLE table name NOCHECK CONSTRAINT ALL and ALTER TABLE table name CHECK CONSTRAINT ALL.</param>
-        /// <param name="commandTimeoutInMinutes">Command Timeout In Minutes.</param>
-        /// <param name="enableRecursiveInsert">When Recursive is set to true the entire entity hierarchy will be inserted.</param>
-        /// <param name="sortUsingClusteredIndex">When SortUsingClusteredIndex is set to true the entities will be sorted according to the clustered index 
-        /// of the target table.</param>
-        /// <param name="updateStatistics">When UpdateStatistics is set the command "UPDATE STATISTICS tablename WITH ALL" will be executed after the insert.</param>
-        /// <param name="isAudited">Is audited.</param>
-        /// <param name="operation">Operation to audit.</param>
-        //public virtual void BulkAddAll(IList<TEntity> entityList)
-        //{
-        //    using (var entityContext = ContextCreator())
-        //    {
-        //        try
-        //        {
-        //            entityContext.BulkInsert(entityList);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex;
-        //        }
-        //    }
-        //}
 
         #endregion
 
@@ -260,36 +224,6 @@ namespace NexaDb.Infra.Data.Repositories.Generic
                 entityContext.SaveChanges();
             }
         }
-
-        /// <summary>
-        /// BulkDeleteAll: Deletes a range of entities to database via a bulk operation.
-        /// </summary>
-        /// <param name="commandTimeoutInMinutes">Command Timeout In Minutes.</param>
-        /// <param name="isAudited">Is audited.</param>
-        /// <param name="operation">Operation to audit.</param>
-        /// <param name="clauses">The list of conditions that will be applied to the action.</param>
-        //public virtual void BulkDeleteAll(int commandTimeoutInMinutes = 10,
-        //    params Expression<Func<TEntity, bool>>[] clauses)
-        //{
-        //    using (var entityContext = ContextCreator())
-        //    {
-        //        IQueryable<TEntity> temporaryQuery = entityContext.Set<TEntity>();
-
-        //        if (clauses != null)
-        //            temporaryQuery = clauses.Aggregate(temporaryQuery, (current, clause) => current.Where(clause));
-
-        //        string query = "DELETE [Extent1] " + temporaryQuery.ToString().Substring(temporaryQuery.ToString().IndexOf("FROM"));
-
-        //        SqlConnection connection = (SqlConnection)entityContext.Database.Connection;
-
-        //        if (connection.State == ConnectionState.Closed)
-        //            connection.Open();
-
-        //        SqlCommand cmd = new SqlCommand(query, connection, null);
-        //        cmd.CommandTimeout = commandTimeoutInMinutes * 60;
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //}
 
         #endregion
 
@@ -402,45 +336,6 @@ namespace NexaDb.Infra.Data.Repositories.Generic
                 return updatedEntities;
             }
         }
-
-        /// <summary>
-        /// BulkUpdateAll: Updates a range of entities to database via a bulk operation.
-        /// </summary>
-        /// <param name="entityList">The list of entities that will be inserted into the database.</param>
-        /// <param name="updatedColumnNames">If UpdatedColumnNames is an empty list all non-key mapped columns will be updated, 
-        /// otherwise only the columns specified.</param>
-        /// <param name="keyPropertyNames">If KeyMemberNames is an empty list the primary key columns will be used to select which 
-        /// rows to update, otherwise the columns specified will be used.</param>
-        /// <param name="commandTimeoutInMinutes">Command Timeout in minutes.</param>
-        /// <param name="insertIfNew">Insert if new.</param>
-        /// <param name="isAudited">Is audited.</param>
-        ///// <param name="operation">Operation to audit.</param>
-        //public virtual void BulkUpdateAll(IList entityList, string[] updatedColumnNames, string[] keyPropertyNames, int commandTimeoutInMinutes = 10,
-        //    bool insertIfNew = false)
-        //{
-        //    using (var entityContext = ContextCreator())
-        //    {
-        //        try
-        //        {
-        //            var request = new BulkUpdateRequest();
-
-        //            request.Entities = entityList;
-        //            request.Transaction = null;
-
-        //            request.UpdatedColumnNames = updatedColumnNames;
-        //            request.KeyPropertyNames = keyPropertyNames;
-
-        //            request.CommandTimeout = TimeSpan.FromMinutes(commandTimeoutInMinutes);
-        //            request.InsertIfNew = insertIfNew;
-
-        //            var response = entityContext.BulkUpdateAll(request);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex;
-        //        }
-        //    }
-        //}
 
         #endregion
 

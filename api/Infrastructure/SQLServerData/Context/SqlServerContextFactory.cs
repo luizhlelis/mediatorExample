@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace MediatorExample.Infrastructure.SQLServerData.Context
+namespace MediatorExample.Infrastructure.SqlServerData.Context
 {
     public class SqlServerContextFactory : IDesignTimeDbContextFactory<SqlServerContext>
     {

@@ -13,7 +13,7 @@ namespace MediatorExample.Application.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly IEntityRepository<Customer> _customerGenericRepository;
-
+    
         public CustomerController(IEntityRepository<Customer> customerGenericRepository)
         {
             _customerGenericRepository = customerGenericRepository;
