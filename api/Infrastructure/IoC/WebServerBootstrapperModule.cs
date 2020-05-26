@@ -9,6 +9,7 @@ namespace MediatorExample.Infrastructure.IoC
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterModule(new SqlServerRepositoryModule());
+            builder.RegisterModule(new NotificationHandlerModule());
         }
     }
 }

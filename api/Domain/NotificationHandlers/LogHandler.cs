@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MediatorExample.Domain.Entities.Model;
 using MediatR;
 
-namespace Domain.NotificationHandlers
+namespace MediatorExample.Domain.NotificationHandlers
 {
     public class LogHandler : INotificationHandler<Employee>
     {

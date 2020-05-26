@@ -16,11 +16,13 @@ using Microsoft.Extensions.Configuration;
     EFCore: github.com/RodrigoBernardino/DynamicLinqRepository
 */
 
-namespace NexaDb.Infra.SqlServerData.Repositories.Generic
+namespace MediatorExample.Infra.SqlServerData.Repositories.Generic
 {
     public class EntityRepository<TEntity> : IEntityRepository<TEntity>
         where TEntity : class, IIdentifiableEntity, new()
     {
+        public Func<SqlServerContext> ContextCreator { get; private set; }
+
         public EntityRepository(IConfiguration configuration)
         {
             ContextCreator = () =>
@@ -39,8 +41,6 @@ namespace NexaDb.Infra.SqlServerData.Repositories.Generic
                 return context;
             };
         }
-
-        public Func<SqlServerContext> ContextCreator { get; private set; }
 
         #region Write
 

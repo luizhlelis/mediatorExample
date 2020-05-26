@@ -33,7 +33,8 @@ namespace MediatorExample.Application
             services
                 .AddOptions()
                 .AddMediatR(typeof(Startup))
-                .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                .AddMvc()
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             var builder = new ContainerBuilder();
             builder.Populate(services);

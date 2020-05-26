@@ -9,7 +9,8 @@ namespace MediatorExample.Infrastructure.SqlServerData.Context
     {
         public DbSet<Customer> Customers { get; set; }
 
-        public SqlServerContext(DbContextOptions<SqlServerContext> options) : base(options)
+        public SqlServerContext(DbContextOptions<SqlServerContext> options)
+            : base(options)
         {
         }
 
