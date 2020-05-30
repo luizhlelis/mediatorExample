@@ -32,7 +32,9 @@ namespace MediatorExample.Infra.SqlServerData.Repositories.Generic
 
                 builder.UseSqlServer(
                     configuration
-                            .GetSection("ConnectionSettings:SqlServer:ConnectionString")
+                            .GetSection("ConnectionSettings")
+                            .GetSection("SqlServer")
+                            .GetSection("ConnectionString")
                             .Value
                 );
 

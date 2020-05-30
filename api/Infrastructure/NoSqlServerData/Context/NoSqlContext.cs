@@ -1,35 +1,76 @@
-﻿using System.Threading;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Infrastructure.NoSqlServerData.Context
 {
-    public class NoSqlContext
+    public class MongoContext : INoSqlContext
     {
-        public IMongoClient Client { get; }
-        public IMongoDatabase Database { get; }
+        private IMongoDatabase Database { get; set; }
+        public MongoClient MongoClient { get; set; }
+        private readonly List<Func<Task>> _commands;
+        public IClientSessionHandle Session { get; set; }
 
-        public NoSqlContext(MongoClient client)
+        public MongoContext(IConfiguration configuration)
         {
-            Client = client;
-            //Database = GetMongoDatabase(config.Database);
+            // Set Guid to CSharp style (with dash -)
+            BsonDefaults.GuidRepresentation = GuidRepresentation.CSharpLegacy;
+
+            // Every command will be stored and it'll be processed at SaveChanges
+            _commands = new List<Func<Task>>();
+
+            MongoClient = new MongoClient(
+                    configuration
+                        .GetSection("ConnectionSettings")
+                        .GetSection("NoSqlServer")
+                        .GetSection("ConnectionString")
+                        .Value
+            );
+
+            Database = MongoClient.GetDatabase(
+                    configuration
+                        .GetSection("ConnectionSettings")
+                        .GetSection("NoSqlServer")
+                        .GetSection("DatabaseName")
+                        .Value
+            );
         }
 
-        public IMongoCollection<T> GetCollection<T>(string collectionName)
+        public async Task<int> SaveChanges()
         {
-            return Database.GetCollection<T>(collectionName);
+            using (Session = await MongoClient.StartSessionAsync())
+            {
+                Session.StartTransaction();
+
+                var commandTasks = _commands.Select(c => c());
+                await Task.WhenAll(commandTasks);
+                await Session.CommitTransactionAsync();
+            }
+
+            return _commands.Count;
         }
 
-        private IMongoDatabase GetMongoDatabase(string databaseName)
+        public IMongoCollection<T> GetCollection<T>(string name)
         {
-            try
-            {
-                return Client.GetDatabase(databaseName);
-            }
-            catch
-            {
-                Thread.Sleep(1000);
-                return GetMongoDatabase(databaseName);
-            }
+            return Database.GetCollection<T>(name);
+        }
+
+        public void Dispose()
+        {
+            while (Session != null && Session.IsInTransaction)
+                Thread.Sleep(TimeSpan.FromMilliseconds(100));
+
+            GC.SuppressFinalize(this);
+        }
+
+        public void AddCommand(Func<Task> func)
+        {
+            _commands.Add(func);
         }
     }
 }
