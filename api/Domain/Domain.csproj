@@ -22,6 +22,7 @@
     <Folder Include="Data\NoSqlServerRepositoryContract\Generic\" />
     <Folder Include="Data\NoSqlServerRepositoryContract\Specific\" />
     <Folder Include="Data\NoSqlServerRepositoryContract\Generic\Entities\" />
+    <Folder Include="Entities\Enums\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatorExample.Domain.Entities.Enums;
 using MediatorExample.Domain.Entities.Model;
 using MediatR;
 

@@ -26,10 +26,10 @@ namespace Infrastructure.NoSqlServerData.Repositories.Generic
             _collection = _context.GetCollection<TDocument>(typeof(TDocument).Name);
         }
 
-        public virtual void Add(TDocument obj)
+        public virtual void Add(TDocument document)
         {
             ConfigCollection();
-            _context.AddCommand(() => _collection.InsertOneAsync(obj));
+            _context.AddCommand(() => _collection.InsertOneAsync(document));
         }
 
         public virtual async Task<TDocument> GetById(Guid id)
@@ -46,16 +46,19 @@ namespace Infrastructure.NoSqlServerData.Repositories.Generic
             return all.ToList();
         }
 
-        public virtual void Update(TDocument obj)
+        public virtual void Update(TDocument document)
         {
             ConfigCollection();
-            _context.AddCommand(() => _collection.ReplaceOneAsync(Builders<TDocument>.Filter.Eq("_id", obj.Id), obj));
+            _context.AddCommand(() => _collection.ReplaceOneAsync(
+                Builders<TDocument>.Filter.Eq("_id", document.Id),
+                document));
         }
 
         public virtual void Remove(Guid id)
         {
             ConfigCollection();
-            _context.AddCommand(() => _collection.DeleteOneAsync(Builders<TDocument>.Filter.Eq("_id", id)));
+            _context.AddCommand(() => _collection.DeleteOneAsync(
+                Builders<TDocument>.Filter.Eq("_id", id)));
         }
 
         public void Dispose()

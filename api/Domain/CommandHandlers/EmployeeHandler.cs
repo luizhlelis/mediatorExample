@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatorExample.Domain.Commands;
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic;
+using MediatorExample.Domain.Entities.Enums;
 using MediatorExample.Domain.Entities.Model;
 using MediatR;
 
@@ -18,16 +19,20 @@ namespace MediatorExample.Domain.CommandHandlers
 
         public Task<string> Handle(EmployeeCreateCommand request, CancellationToken cancellationToken)
         {
-            _employeeRepository.Add(new
+            Employee employee = new
                 Employee(
                     request.Id,
                     request.Name,
                     request.Email,
                     request.Phone,
                     request.Salary
-                )
-            );
-            throw new NotImplementedException();
+                );
+
+            _employeeRepository.Add(employee);
+
+            _mediator.Publish(employee, EmployeeModifyMode.Add);
+
+            return (Task<string>)Task.CompletedTask;
         }
 
         public Task<string> Handle(EmployeeUpdateCommand request, CancellationToken cancellationToken)
