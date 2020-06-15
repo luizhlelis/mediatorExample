@@ -1,7 +1,7 @@
 ﻿using System;
 using MediatR;
 
-namespace MediatorExample.Domain.Commands
+namespace MediatorExample.Domain.Entities.Commands
 {
     public class EmployeeCreateCommand : IRequest<string>
     {

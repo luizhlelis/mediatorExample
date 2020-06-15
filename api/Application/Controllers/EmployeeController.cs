@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MediatorExample.Domain.Commands;
+using MediatorExample.Domain.Entities.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

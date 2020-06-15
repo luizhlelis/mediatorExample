@@ -3,6 +3,6 @@ namespace MediatorExample.Domain.NotificationHandlers
 {
     public interface INoSqlHandler
     {
-        int AddToAccumulatedTotal(int accumulatedTotal, int newValue);
+        double AddToAccumulatedTotal(double accumulatedTotal, double newValue);
     }
 }

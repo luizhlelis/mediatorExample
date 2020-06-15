@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatorExample.Domain.Commands;
+using MediatorExample.Domain.Entities.Commands;
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic;
 using MediatorExample.Domain.Entities.Enums;
 using MediatorExample.Domain.Entities.Model;
@@ -30,7 +30,7 @@ namespace MediatorExample.Domain.CommandHandlers
 
             _employeeRepository.Add(employee);
 
-            _mediator.Publish(employee, EmployeeModifyMode.Add);
+            _mediator.Publish(employee);
 
             return (Task<string>)Task.CompletedTask;
         }

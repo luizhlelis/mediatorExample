@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MediatorExample.Domain.Commands
+namespace MediatorExample.Domain.Entities.Commands
 {
     public class EmployeeUpdateCommand : EmployeeCreateCommand
     {

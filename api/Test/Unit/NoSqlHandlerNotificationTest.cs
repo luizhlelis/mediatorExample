@@ -17,8 +17,8 @@ namespace MediatorExample.Test.Unit
         [InlineData(50, 10, 60)]
         [InlineData(-10, 10, 0)]
         [InlineData(-20, 10, 0)]
-        public void AddToAccumulatedTotalTest(int newValue,
-            int accumulatedTotal, int expectedResult)
+        public void AddToAccumulatedTotalTest(double newValue,
+            double accumulatedTotal, double expectedResult)
         {
             accumulatedTotal = _noSqlHandler
                 .AddToAccumulatedTotal(accumulatedTotal, newValue);
