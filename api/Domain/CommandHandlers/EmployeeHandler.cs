@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MediatorExample.Domain.Commands;
+using MediatorExample.Domain.Entities.Commands;
 using MediatorExample.Domain.Data.SqlServerRepositoryContract.Generic;
+using MediatorExample.Domain.Entities.Enums;
 using MediatorExample.Domain.Entities.Model;
 using MediatR;
 
@@ -16,18 +17,28 @@ namespace MediatorExample.Domain.CommandHandlers
         private readonly IMediator _mediator;
         private readonly IEntityRepository<Employee> _employeeRepository;
 
+        public EmployeeHandler(IMediator mediator, IEntityRepository<Employee> employeeRepository)
+        {
+            _mediator = mediator;
+            _employeeRepository = employeeRepository;
+        }
+
         public Task<string> Handle(EmployeeCreateCommand request, CancellationToken cancellationToken)
         {
-            _employeeRepository.Add(new
+            Employee employee = new
                 Employee(
                     request.Id,
                     request.Name,
                     request.Email,
                     request.Phone,
                     request.Salary
-                )
-            );
-            throw new NotImplementedException();
+                );
+
+            _employeeRepository.Add(employee);
+
+            _mediator.Publish(employee);
+
+            return (Task<string>)Task.CompletedTask;
         }
 
         public Task<string> Handle(EmployeeUpdateCommand request, CancellationToken cancellationToken)

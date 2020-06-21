@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
-    <Folder Include="Commands\" />
     <Folder Include="Data\" />
     <Folder Include="Data\SqlServerRepositoryContract\" />
     <Folder Include="Data\SqlServerRepositoryContract\Generic\" />
@@ -15,9 +14,16 @@
     <Folder Include="Utils\" />
     <Folder Include="Entities\Model\" />
     <Folder Include="CommandHandlers\" />
-    <Folder Include="Queries\" />
     <Folder Include="QueryHandlers\" />
     <Folder Include="NotificationHandlers\" />
+    <Folder Include="Data\NoSqlServerRepositoryContract\" />
+    <Folder Include="Data\NoSqlServerRepositoryContract\Generic\" />
+    <Folder Include="Data\NoSqlServerRepositoryContract\Specific\" />
+    <Folder Include="Data\NoSqlServerRepositoryContract\Generic\Entities\" />
+    <Folder Include="Entities\Enums\" />
+    <Folder Include="Entities\Commands\" />
+    <Folder Include="Entities\Queries\" />
+    <Folder Include="Entities\Notifications\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
@@ -25,5 +31,6 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.4" />
   </ItemGroup>
 </Project>

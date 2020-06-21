@@ -4,7 +4,7 @@ using MediatR;
 
 namespace MediatorExample.Domain.Entities.Model
 {
-    public class Employee : IIdentifiableEntity, INotification
+    public class Employee : IIdentifiableEntity
     {
         public Guid Id { get; private set; }
         public string Name { get; private set; }

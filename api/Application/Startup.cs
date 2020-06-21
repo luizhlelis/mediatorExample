@@ -1,66 +1,44 @@
 ﻿using System;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
+using System.Reflection;
 using MediatorExample.Infrastructure.IoC;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MediatR;
 
 namespace MediatorExample.Application
 {
     public class Startup
     {
+        private readonly IConfigurationRoot Configuration;
+
         public Startup(IHostingEnvironment env)
         {
-            // In ASP.NET Core 3.0 env will be an IWebHostEnvironment , not IHostingEnvironment.
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            this._configuration = builder.Build();
+
+            Configuration = builder.Build();
         }
 
-        private readonly IConfigurationRoot _configuration;
-        public ILifetimeScope AutofacContainer { get; private set; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // ConfigureServices is where you register dependencies and return an `IServiceProvider` implemented by `AutofacServiceProvider`.
-        // This is the old, not recommended way, and is NOT SUPPORTED in ASP.NET Core 3.0+.
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            IocWebAppContainer.ConfigureServices(services);
 
-            // Add services to the collection
+            Assembly assembly =
+                AppDomain.CurrentDomain.Load("Domain");
+
             services
                 .AddOptions()
-                .AddMediatR(typeof(Startup));
-
-            // Create a container-builder and register dependencies
-            var builder = new ContainerBuilder();
-
-            // Populate the service-descriptors added to `IServiceCollection`
-            // BEFORE you add things to Autofac so that the Autofac
-            // registrations can override stuff in the `IServiceCollection`
-            // as needed
-            builder.Populate(services);
-
-            // Register your own things directly with Autofac
-            builder.RegisterModule(new WebServerBootstrapperModule());
-
-            AutofacContainer = builder.Build();
-
-            // this will be used as the service-provider for the application!
-            return new AutofacServiceProvider(AutofacContainer);
+                .AddMediatR(assembly)
+                .AddMvc()
+                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        // Configure is where you add middleware.
-        // You can use IApplicationBuilder.ApplicationServices
-        // here if you need to resolve things from the container.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -69,7 +47,6 @@ namespace MediatorExample.Application
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

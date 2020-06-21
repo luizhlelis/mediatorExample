@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		init-mongo.js = init-mongo.js
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{284CC325-C575-43B9-AB72-BCF21273A438}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +33,9 @@ Global
 		{8DFB4D12-E750-4970-8BAB-1B77233ABB5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DFB4D12-E750-4970-8BAB-1B77233ABB5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DFB4D12-E750-4970-8BAB-1B77233ABB5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284CC325-C575-43B9-AB72-BCF21273A438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284CC325-C575-43B9-AB72-BCF21273A438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284CC325-C575-43B9-AB72-BCF21273A438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284CC325-C575-43B9-AB72-BCF21273A438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
