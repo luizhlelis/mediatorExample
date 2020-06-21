@@ -17,6 +17,12 @@ namespace MediatorExample.Domain.CommandHandlers
         private readonly IMediator _mediator;
         private readonly IEntityRepository<Employee> _employeeRepository;
 
+        public EmployeeHandler(IMediator mediator, IEntityRepository<Employee> employeeRepository)
+        {
+            _mediator = mediator;
+            _employeeRepository = employeeRepository;
+        }
+
         public Task<string> Handle(EmployeeCreateCommand request, CancellationToken cancellationToken)
         {
             Employee employee = new

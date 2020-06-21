@@ -10,7 +10,7 @@ namespace MediatorExample.Domain.Entities.Model
         public ObjectId Id { get; private set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
-        public double MonthlyEmployeeExpenses { get; private set; }
+        public double MonthlySalaryExpenses { get; set; }
         public List<EmployeeSummary> EmployeeList { get; set; }
 
         public Office() { }
@@ -20,7 +20,7 @@ namespace MediatorExample.Domain.Entities.Model
             Id = id;
             Name = name;
             Address = address;
-            MonthlyEmployeeExpenses = monthlyEmployeeExpenses;
+            MonthlySalaryExpenses = monthlyEmployeeExpenses;
         }
     }
 

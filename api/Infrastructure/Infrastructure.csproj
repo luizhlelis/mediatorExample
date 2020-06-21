@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="IoC\" />
-    <Folder Include="IoC\Modules\" />
     <Folder Include="SqlServerData\" />
     <Folder Include="SqlServerData\Context\" />
     <Folder Include="SqlServerData\Repositories\" />
@@ -21,7 +20,6 @@
     <Folder Include="NoSqlServerData\Repositories\Specific\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.3" />
     <PackageReference Include="System.Linq.Dynamic.Core" Version="1.1.1" />
     <PackageReference Include="MongoDB.Driver" Version="2.10.4" />

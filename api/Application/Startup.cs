@@ -1,20 +1,18 @@
 ﻿using System;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
+using System.Reflection;
 using MediatorExample.Infrastructure.IoC;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using MediatR;
 
 namespace MediatorExample.Application
 {
     public class Startup
     {
-        private readonly IConfigurationRoot _configuration;
-        public ILifetimeScope AutofacContainer { get; private set; }
+        private readonly IConfigurationRoot Configuration;
 
         public Startup(IHostingEnvironment env)
         {
@@ -23,27 +21,22 @@ namespace MediatorExample.Application
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            this._configuration = builder.Build();
+
+            Configuration = builder.Build();
         }
 
-        public IServiceProvider ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            IocWebAppContainer.ConfigureServices(services);
+
+            Assembly assembly =
+                AppDomain.CurrentDomain.Load("Domain");
 
             services
                 .AddOptions()
-                .AddMediatR(typeof(Startup))
+                .AddMediatR(assembly)
                 .AddMvc()
                     .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            var builder = new ContainerBuilder();
-            builder.Populate(services);
-
-            builder.RegisterModule(new WebServerBootstrapperModule());
-
-            AutofacContainer = builder.Build();
-
-            return new AutofacServiceProvider(AutofacContainer);
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

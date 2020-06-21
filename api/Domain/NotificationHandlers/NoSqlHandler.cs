@@ -9,12 +9,13 @@ using MediatR;
 
 namespace MediatorExample.Domain.NotificationHandlers
 {
-    public class NoSqlHandler : INotificationHandler<EmployeeNoSqlNotification>, INoSqlHandler
+    public class NoSqlHandler : INotificationHandler<EmployeeNoSqlNotification>
     {
         private readonly IMongoGenericRepository<Office> _officeRepository;
 
-        public NoSqlHandler()
+        public NoSqlHandler(IMongoGenericRepository<Office> officeRepository)
         {
+            _officeRepository = officeRepository;
         }
 
         public async Task Handle(
@@ -31,17 +32,27 @@ namespace MediatorExample.Domain.NotificationHandlers
                     Name = notification.Name
                 });
 
-            AddToAccumulatedTotal(
-                newcomerEmployeeOffice.MonthlyEmployeeExpenses,
-                notification.Salary);
+            newcomerEmployeeOffice.MonthlySalaryExpenses = GetNewMonthlySalaryExpenses(
+                newcomerEmployeeOffice.MonthlySalaryExpenses,
+                notification.Salary,
+                notification.Type);
 
             _officeRepository.Update(newcomerEmployeeOffice);
         }
 
-        public double AddToAccumulatedTotal(double accumulatedTotal, double newValue)
+        public double GetNewMonthlySalaryExpenses(
+            double total,
+            double newValue,
+            CommandType commandType)
         {
-            accumulatedTotal += newValue;
-            return accumulatedTotal < 0 ? 0 : accumulatedTotal;
+            double newTotalValue;
+
+            newTotalValue =
+                commandType == CommandType.Delete ?
+                total -= newValue :
+                total += newValue;
+            
+            return newTotalValue < 0 ? 0 : newTotalValue;
         }
     }
 }
