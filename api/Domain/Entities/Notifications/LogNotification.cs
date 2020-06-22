@@ -7,7 +7,8 @@ namespace MediatorExample.Domain.Entities.Notifications
     public class LogNotification : INotification
     {
         public Guid Id { get; set; }
-        public CommandType CommandType { get; set; }
-        public LogEventType EventType { get; set; }
+        public string EventName { get; set; }
+        public EventType EventType { get; set; }
+        public EventAction EventAction { get; set; }
     }
 }

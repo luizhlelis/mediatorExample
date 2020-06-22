@@ -3,17 +3,17 @@ using System.ComponentModel;
 
 namespace MediatorExample.Domain.Entities.Enums
 {
-    public enum LogEventType
+    public enum EventAction
     {
-        [Description("Employee Command")]
-        EmployeeCommand,
-        [Description("Employee Query")]
-        EmployeeQuery,
-        CompanyCommand,
-        CompanyQuery,
-        SectorCommand,
-        SectorQuery,
-        SubsidiaryCommand,
-        SubsidiaryQuery,
+        [Description("Addition")]
+        Add,
+        [Description("Update")]
+        Update,
+        [Description("Remove")]
+        Delete,
+        [Description("Get One")]
+        Get,
+        [Description("Get All")]
+        GetAll
     }
 }

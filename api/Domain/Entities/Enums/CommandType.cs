@@ -3,13 +3,11 @@ using System.ComponentModel;
 
 namespace MediatorExample.Domain.Entities.Enums
 {
-    public enum CommandType
+    public enum EventType
     {
-        [Description("Addition")]
-        Add,
-        [Description("Update")]
-        Update,
-        [Description("Delete")]
-        Delete
+        [Description("Query")]
+        Query,
+        [Description("Command")]
+        Command
     }
 }

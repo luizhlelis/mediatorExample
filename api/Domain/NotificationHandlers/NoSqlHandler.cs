@@ -43,12 +43,12 @@ namespace MediatorExample.Domain.NotificationHandlers
         public double GetNewMonthlySalaryExpenses(
             double total,
             double newValue,
-            CommandType commandType)
+            EventAction commandType)
         {
             double newTotalValue;
 
             newTotalValue =
-                commandType == CommandType.Delete ?
+                commandType == EventAction.Delete ?
                 total -= newValue :
                 total += newValue;
             

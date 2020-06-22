@@ -26,10 +26,10 @@ namespace MediatorExample.Test.Unit
             double afterUpdatedTotal = total;
 
             total = notifyHandler
-                .GetNewMonthlySalaryExpenses(total, newValue, CommandType.Add);
+                .GetNewMonthlySalaryExpenses(total, newValue, EventAction.Add);
 
             afterUpdatedTotal = notifyHandler
-                .GetNewMonthlySalaryExpenses(afterUpdatedTotal, newValue, CommandType.Update);
+                .GetNewMonthlySalaryExpenses(afterUpdatedTotal, newValue, EventAction.Update);
 
             Assert.Equal(expectedResult, total);
             Assert.Equal(total, afterUpdatedTotal);
@@ -51,7 +51,7 @@ namespace MediatorExample.Test.Unit
             NoSqlHandler notifyHandler = new NoSqlHandler(mockedOfficeRepo.Object);
 
             total = notifyHandler
-                .GetNewMonthlySalaryExpenses(total, newValue, CommandType.Delete);
+                .GetNewMonthlySalaryExpenses(total, newValue, EventAction.Delete);
 
             Assert.Equal(expectedResult, total);
         }

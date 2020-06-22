@@ -10,6 +10,6 @@ namespace MediatorExample.Domain.Entities.Notifications
         public Guid OfficeId { get; set; }
         public string Name { get; set; }
         public double Salary { get; set; }
-        public CommandType Type { get; set; }
+        public EventAction Type { get; set; }
     }
 }
